@@ -94,9 +94,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 /* ADVANTAGES */
 .advantages{padding:100px 0;background:var(--navy-light)}
 .adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.adv-card{padding:32px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:all .3s}
+.adv-card{padding:32px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:all .3s;border-top:3px solid var(--cyan)}
 .adv-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 8px 24px rgba(83,186,143,.1)}
-.adv-icon{font-size:2rem;margin-bottom:16px}
 .adv-card h3{font-family:'Signika',sans-serif;font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:8px}
 .adv-card p{font-size:.9rem;color:var(--text)}
 
@@ -113,7 +112,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 /* APPLICATIONS */
 .applications{padding:100px 0;background:var(--navy-light)}
 .app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
-.app-card{padding:36px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:border-color .3s}
+.app-card{padding:36px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:border-color .3s;border-left:3px solid var(--cyan)}
 .app-card:hover{border-color:var(--cyan)}
 .app-card h3{font-family:'Signika',sans-serif;font-size:1.15rem;font-weight:600;color:var(--heading);margin-bottom:10px}
 .app-card p{font-size:.9rem;color:var(--text)}
@@ -346,7 +345,7 @@ footer a{color:var(--cyan)}
     <h1>L'énergie des vagues <em>compétitive et ultra décarbonée</em></h1>
     <p>Technologie française brevetée, non-intermittente, qui stabilise les réseaux électriques. Production 24h/24, de 5 cm à plus de 30 m de vagues.</p>
     <div class="hero-actions">
-      <a href="https://www.youtube.com/results?search_query=HACE+wave+energy+BFM" target="_blank" class="btn btn-primary">▶ Voir sur BFM TV</a>
+      <a href="https://www.youtube.com/results?search_query=HACE+wave+energy+BFM" target="_blank" class="btn btn-primary">Voir sur BFM TV</a>
       <a href="#contact" class="btn btn-outline">Recevoir le pitch deck</a>
     </div>
   </div>
@@ -369,7 +368,7 @@ footer a{color:var(--cyan)}
     <div class="tech-grid">
       <div class="tech-visual reveal">
         <img src="assets/images/hero-3d-render.jpg" alt="Turbine HACE en mer — vue 3D du système OWC" width="600" height="400" loading="lazy">
-        <div class="tech-visual-badge">⚡ Fonctionne dès 5 cm de vague</div>
+        <div class="tech-visual-badge">Fonctionne dès 5 cm de vague</div>
       </div>
       <div class="tech-steps">
         <div class="tech-step reveal">
@@ -403,12 +402,12 @@ footer a{color:var(--cyan)}
     <div class="section-label reveal">Avantages décisifs</div>
     <h2 class="section-title reveal">Pourquoi HACE surpasse <br>les autres EMR</h2>
     <div class="adv-grid">
-      <div class="adv-card reveal"><div class="adv-icon">🔋</div><h3>Non-intermittente</h3><p>Facteur de charge de 50 à 90% selon le site. Production stable 24h/24, supérieure à toute autre énergie marine renouvelable.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">🌊</div><h3>Insubmersible & résiliente</h3><p>Résiste aux cyclones, vagues scélérates et tsunamis. Durée de vie supérieure à 50 ans, validée par simulations numériques.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">📐</div><h3>Modulaire</h3><p>De 1 MW à plusieurs GW par site. Moins de 4 ans pour des milliers de MW : réponse à l'urgence climatique.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">♻️</div><h3>95% recyclable</h3><p>Zéro béton, installation par ancrages. Acier recyclable à plus de 95% de la masse. Moins de 300 T/MW.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">👁️</div><h3>Acceptabilité sociale</h3><p>Moins de 5 m hors de l'eau, aucune obstruction de vue. Aucun fluide polluant, aucun impact sur les écosystèmes.</p></div>
-      <div class="adv-card reveal"><div class="adv-icon">🛡️</div><h3>Protection côtière</h3><p>Déphasage des vagues contre l'érosion. Rechargement naturel des plages en sable. Double usage, double valeur.</p></div>
+      <div class="adv-card reveal"><h3>Non-intermittente</h3><p>Facteur de charge de 50 à 90% selon le site. Production stable 24h/24, supérieure à toute autre énergie marine renouvelable.</p></div>
+      <div class="adv-card reveal"><h3>Insubmersible & résiliente</h3><p>Résiste aux cyclones, vagues scélérates et tsunamis. Durée de vie supérieure à 50 ans, validée par simulations numériques.</p></div>
+      <div class="adv-card reveal"><h3>Modulaire</h3><p>De 1 MW à plusieurs GW par site. Moins de 4 ans pour des milliers de MW : réponse à l'urgence climatique.</p></div>
+      <div class="adv-card reveal"><h3>95% recyclable</h3><p>Zéro béton, installation par ancrages. Acier recyclable à plus de 95% de la masse. Moins de 300 T/MW.</p></div>
+      <div class="adv-card reveal"><h3>Acceptabilité sociale</h3><p>Moins de 5 m hors de l'eau, aucune obstruction de vue. Aucun fluide polluant, aucun impact sur les écosystèmes.</p></div>
+      <div class="adv-card reveal"><h3>Protection côtière</h3><p>Déphasage des vagues contre l'érosion. Rechargement naturel des plages en sable. Double usage, double valeur.</p></div>
     </div>
   </div>
 </section>
@@ -440,10 +439,10 @@ footer a{color:var(--cyan)}
     <div class="section-label reveal">Applications stratégiques</div>
     <h2 class="section-title reveal">Des marchés concrets <br>à forte demande</h2>
     <div class="app-grid">
-      <div class="app-card reveal"><h3>⚡ Hydrogène vert marin</h3><p>Production stable pour électrolyseurs. H₂ vert à moins de 2€/kg. L'énergie massique de l'H₂ (33,4 kWh/kg) : 1 kg H₂ = 4 kg d'hydrocarbure = 60 kg de batteries.</p><span class="app-tag">H₂ &lt; 2€/kg</span></div>
-      <div class="app-card reveal"><h3>🏝️ Autonomie insulaire</h3><p>Électricité décarbonée et eau douce par désalinisation compétitive (&lt; 0,08€/m³). Élimine la dépendance aux hydrocarbures importés.</p><span class="app-tag">Désalinisation &lt; 0,08€/m³</span></div>
-      <div class="app-card reveal"><h3>🔌 Stabilisation des réseaux</h3><p>Production en parité réseau. Synergie avec solaire et éolien. Alimentation continue des datacenters.</p><span class="app-tag">Parité réseau</span></div>
-      <div class="app-card reveal"><h3>🚢 Ports & transport maritime zéro émission</h3><p>Membre de ZESTAs (50+ acteurs mondiaux). Alimentation électrique à quai, avitaillement H₂ des navires. Énergie « Absolute Zero » pour la décarbonation portuaire. Lauréat Smart Port Marseille 2024.</p><span class="app-tag">ZESTAs · Absolute Zero</span></div>
+      <div class="app-card reveal"><h3>Hydrogène vert marin</h3><p>Production stable pour électrolyseurs. H₂ vert à moins de 2€/kg. L'énergie massique de l'H₂ (33,4 kWh/kg) : 1 kg H₂ = 4 kg d'hydrocarbure = 60 kg de batteries.</p><span class="app-tag">H₂ &lt; 2€/kg</span></div>
+      <div class="app-card reveal"><h3>Autonomie insulaire</h3><p>Électricité décarbonée et eau douce par désalinisation compétitive (&lt; 0,08€/m³). Élimine la dépendance aux hydrocarbures importés.</p><span class="app-tag">Désalinisation &lt; 0,08€/m³</span></div>
+      <div class="app-card reveal"><h3>Stabilisation des réseaux</h3><p>Production en parité réseau. Synergie avec solaire et éolien. Alimentation continue des datacenters.</p><span class="app-tag">Parité réseau</span></div>
+      <div class="app-card reveal"><h3>Ports & transport maritime zéro émission</h3><p>Membre de ZESTAs (50+ acteurs mondiaux). Alimentation électrique à quai, avitaillement H₂ des navires. Énergie « Absolute Zero » pour la décarbonation portuaire. Lauréat Smart Port Marseille 2024.</p><span class="app-tag">ZESTAs · Absolute Zero</span></div>
     </div>
   </div>
 </section>
@@ -574,8 +573,8 @@ footer a{color:var(--cyan)}
       <div class="contact-info reveal">
         <h3>Dr. Jean-Luc Stanek</h3>
         <p>Président exécutif / CEO — Chevalier du Mérite Maritime</p>
-        <div class="contact-detail">🌐 hacewaveenergy.com</div>
-        <div class="contact-detail" style="margin-top:20px">📍 Technopole Montesquieu<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 Allée Jean Rostand<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33650 Martillac, France</div>
+        <div class="contact-detail">hacewaveenergy.com</div>
+        <div class="contact-detail" style="margin-top:20px">Technopole Montesquieu<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 Allée Jean Rostand<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33650 Martillac, France</div>
       </div>
       <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <input type="text" name="name" placeholder="Nom complet" required>
