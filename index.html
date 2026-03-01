@@ -444,7 +444,7 @@ footer a{color:var(--cyan)}
 }
 @media(max-width:768px){
   /* MOBILE NAV — full overlay */
-  .nav-links{display:none;position:fixed;inset:0;top:0;background:rgba(29,61,143,.98);backdrop-filter:blur(12px);flex-direction:column;padding:100px 32px 40px;gap:0;z-index:999}
+  .nav-links{display:none;position:fixed;inset:0;top:0;background:rgba(29,61,143,.98);backdrop-filter:blur(12px);flex-direction:column;padding:100px 32px 40px;gap:0;z-index:999;overflow-y:auto;-webkit-overflow-scrolling:touch}
   .nav-links.open{display:flex}
   .nav-links a{font-size:1.15rem;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.9);width:100%}
   .nav-links a:last-child{border-bottom:none}
