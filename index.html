@@ -110,6 +110,20 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .tech-step-num{flex-shrink:0;width:36px;height:36px;background:rgba(83,186,143,.12);border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--cyan);font-size:.9rem}
 .tech-step h3{font-family:'Signika',sans-serif;font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:4px}
 .tech-step p{font-size:.88rem;color:var(--text)}
+.tech-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.tech-proof-caption{margin-top:14px;font-size:.88rem;color:var(--text);line-height:1.5}
+.tech-proof-caption strong{color:var(--heading)}
+.tech-pillars-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tech-pillar-item{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:10px;border:1px solid #e8ecf0;transition:all .3s}
+.tech-pillar-item:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 20px rgba(83,186,143,.1)}
+.tech-pillar-icon{width:38px;height:38px;border-radius:8px;background:#f0faf5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tech-pillar-item h4{font-family:'Signika',sans-serif;font-size:.95rem;color:var(--heading);margin-bottom:3px;font-weight:700}
+.tech-pillar-item p{font-size:.82rem;color:var(--text);line-height:1.55;margin:0}
+.tech-modular-header{text-align:center;margin-bottom:32px}
+.tech-modular-header h3{font-family:'Signika',sans-serif;font-size:1.4rem;color:var(--heading);margin-bottom:10px}
+.tech-modular-header p{font-size:.92rem;color:var(--text);max-width:600px;margin:0 auto;line-height:1.6}
 
 /* SECONDARY ADVANTAGES */
 .secondary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
@@ -262,7 +276,8 @@ footer a{color:var(--cyan)}
 /* RESPONSIVE */
 @media(max-width:1024px){
   .metrics{grid-template-columns:repeat(2,1fr)}
-  .tech-grid,.coastal-content,.contact-grid{grid-template-columns:1fr}
+  .tech-grid,.coastal-content,.contact-grid,.tech-proof-grid{grid-template-columns:1fr}
+  .tech-pillars-row{grid-template-columns:1fr}
   .secondary-grid,.test-grid,.h2-grid,.market-grid{grid-template-columns:1fr 1fr}
   .trials-grid{grid-template-columns:1fr 1fr}
   .team-grid{grid-template-columns:repeat(2,1fr)}
@@ -336,7 +351,8 @@ footer a{color:var(--cyan)}
 
   /* Cards & surfaces */
   .secondary-card,.app-card,.award-item{background:#1e293b;border-color:#334155}
-  .tech-step,.h2-card,.test-card,.team-card,.market-card{background:#1e293b;border-color:#334155}
+  .tech-step,.h2-card,.test-card,.team-card,.market-card,.tech-pillar-item{background:#1e293b;border-color:#334155}
+  .tech-pillar-icon{background:#152e1f}
   .why-pillar{border-color:#334155}
   .why-pain{border-color:#334155}
   .why-pain::before{background:#c0392b}
@@ -357,7 +373,7 @@ footer a{color:var(--cyan)}
   .faq-question{color:#f1f5f9}
 
   /* Borders global */
-  .secondary-card:hover,.app-card:hover,.award-item:hover,.tech-step:hover{border-color:var(--cyan)}
+  .secondary-card:hover,.app-card:hover,.award-item:hover,.tech-step:hover,.tech-pillar-item:hover{border-color:var(--cyan)}
 
   /* Press */
   .press{background:#111827}
@@ -483,13 +499,13 @@ footer a{color:var(--cyan)}
     <p class="section-subtitle reveal">Basé sur le principe des Colonnes d'Eau Oscillantes Multiples (OWC), HACE convertit la houle en flux d'air continu qui entraîne une turbine générant de l'électricité.</p>
     <div class="tech-grid">
       <div class="tech-visual reveal">
-        <img src="assets/images/hero-3d-render.jpg" alt="Turbine HACE en mer — vue 3D du système OWC" width="600" height="400" loading="lazy">
-        <div class="tech-visual-badge">Fonctionne dès 5 cm de vague</div>
+        <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/pvssRtQQIFY" title="Turbine HACE en fonctionnement — mer quasi-plate" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="tech-visual-badge">🔊 Écoutez : plein régime sans vagues</div>
       </div>
       <div class="tech-steps">
         <div class="tech-step reveal">
           <div class="tech-step-num">1</div>
-          <div><h3>Captation des vagues</h3><p>La houle entre dans les chambres ouvertes sous la surface. Fonctionne avec toutes les vagues, même chaotiques.</p></div>
+          <div><h3>Captation des vagues</h3><p>La houle entre dans les chambres ouvertes sous la surface. Fonctionne avec toutes les vagues dès 5 cm, même chaotiques.</p></div>
         </div>
         <div class="tech-step reveal">
           <div class="tech-step-num">2</div>
@@ -505,10 +521,27 @@ footer a{color:var(--cyan)}
         </div>
       </div>
     </div>
-    <div class="tech-modular reveal" style="margin-top:60px;text-align:center">
-      <h3 style="color:var(--heading);font-size:1.3rem;margin-bottom:12px">Architecture modulaire scalable</h3>
-      <p style="color:var(--text);max-width:600px;margin:0 auto 24px;font-size:.92rem">Chaque module se combine en étoile, ligne ou chevron — de l'alimentation locale au parc GW avec protection côtière intégrée.</p>
-      <img src="assets/images/module-config.png" alt="Configurations modulaires HACE — module unitaire, en étoile et en chevron pour production et protection côtière" width="800" height="450" loading="lazy" style="max-width:100%;border-radius:7px">
+    <div class="tech-pillars-row reveal" style="margin-top:40px">
+      <div class="tech-pillar-item">
+        <div class="tech-pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div><h4>Simple</h4><p>Turbine au sec, pièces &lt;25 kg. Maintenance avec des outils standard — sans plongeurs ni navires spéciaux.</p></div>
+      </div>
+      <div class="tech-pillar-item">
+        <div class="tech-pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h4>Robuste</h4><p>Insubmersible, résiste aux cyclones et tsunamis. Aucune partie mobile immergée — rien à casser sous l'eau.</p></div>
+      </div>
+      <div class="tech-pillar-item">
+        <div class="tech-pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+        <div><h4>Zéro béton</h4><p>100 % acier recyclable. Pas de fondation marine, pas de forage du fond marin. Démontable en fin de vie.</p></div>
+      </div>
+    </div>
+    <div class="tech-modular reveal" style="margin-top:60px">
+      <div class="tech-modular-header">
+        <div class="section-label" style="margin-bottom:8px">Scalable</div>
+        <h3>Du module unitaire au parc gigawatt</h3>
+        <p>Chaque module se combine en étoile, ligne ou chevron. Déploiement de milliers de MW en moins de 4 ans — avec protection côtière intégrée.</p>
+      </div>
+      <img src="assets/images/module-config.png" alt="Configurations modulaires HACE — module unitaire, en étoile et en chevron pour production et protection côtière" width="800" height="450" loading="lazy" style="max-width:100%;border-radius:10px">
     </div>
   </div>
 </section>
