@@ -125,6 +125,19 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.85);letter-spacing:.5px;transition:color .3s}
 .nav-links a:hover{color:#fff}
+.lang-selector{position:relative;margin-left:8px}
+.lang-btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:6px 12px;color:#fff;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Signika',sans-serif;letter-spacing:.5px}
+.lang-btn:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35)}
+.lang-btn svg{width:16px;height:16px;opacity:.8}
+.lang-btn .chevron{width:10px;height:10px;transition:transform .3s;opacity:.6}
+.lang-selector.open .chevron{transform:rotate(180deg)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:rgba(29,61,143,.96);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:6px;min-width:140px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;z-index:1010;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.lang-selector.open .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-option{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:7px;color:rgba(255,255,255,.8);font-size:.82rem;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer}
+.lang-option:hover{background:rgba(255,255,255,.12);color:#fff}
+.lang-option.active{background:rgba(83,186,143,.2);color:var(--cyan)}
+.lang-option .lang-flag{font-size:1.05rem;line-height:1}
+.lang-option .lang-name{flex:1}
 .nav-cta{background:var(--cyan);color:#fff!important;padding:8px 20px;border-radius:7px;font-weight:600;transition:background .3s}
 .nav-cta:hover{background:#43a77d}
 .menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;width:40px;height:40px;position:relative;align-items:center;justify-content:center}
@@ -142,6 +155,55 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(83,186,143,.15);border:1px solid rgba(83,186,143,.4);padding:6px 16px;border-radius:7px;font-size:.8rem;color:#fff;margin-bottom:24px;font-weight:500}
 .hero-badge span{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* 🌊 WAVE ANIMATIONS */
+@keyframes flagWave{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes waveFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes waveSweep{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* ⚡ ELECTRIC ANIMATIONS */
+@keyframes electricPulse{0%,100%{box-shadow:0 0 5px rgba(83,186,143,.3)}50%{box-shadow:0 0 20px rgba(83,186,143,.6),0 0 40px rgba(83,186,143,.2)}}
+@keyframes zap{0%{opacity:1;transform:scaleX(0)}40%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+@keyframes flicker{0%,100%{opacity:1}4%{opacity:.3}8%{opacity:1}12%{opacity:.5}16%{opacity:1}}
+
+/* 🌊 Flags wave bob in dropdown */
+.lang-selector.open .lang-option .lang-flag{display:inline-block;animation:flagWave 1.2s ease-in-out infinite}
+.lang-selector.open .lang-option:nth-child(1) .lang-flag{animation-delay:0s}
+.lang-selector.open .lang-option:nth-child(2) .lang-flag{animation-delay:.15s}
+.lang-selector.open .lang-option:nth-child(3) .lang-flag{animation-delay:.3s}
+.lang-selector.open .lang-option:nth-child(4) .lang-flag{animation-delay:.45s}
+
+/* ⚡ Electric CTA buttons */
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-100%);transition:none}
+.btn-primary:hover::after{animation:waveSweep .6s ease-out}
+
+/* ⚡ Electric glow on nav CTA */
+.nav-cta:hover{animation:electricPulse 1.5s ease-in-out infinite}
+
+/* 🌊 Wave float on logo */
+.nav-logo img{transition:transform .4s ease}
+.nav-logo:hover img{animation:waveFloat 2s ease-in-out infinite}
+
+/* ⚡ Metric numbers electric flicker on appear */
+.metric-num.visible{animation:flicker .3s ease-out 1}
+
+/* 🌊 Cards wave lift on hover */
+.why-pillar:hover,.app-card:hover,.physics-card:hover,.secondary-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(83,186,143,.12)}
+
+/* ⚡ Electric border sweep on video play */
+.video-play-btn::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,transparent,var(--cyan),transparent);animation:spin 3s linear infinite;z-index:-1;opacity:.5}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* 🌊 Wave reveal stagger (children animate with delay) */
+.wave-stagger>*{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.wave-stagger.visible>*:nth-child(1){transition-delay:.05s}
+.wave-stagger.visible>*:nth-child(2){transition-delay:.12s}
+.wave-stagger.visible>*:nth-child(3){transition-delay:.19s}
+.wave-stagger.visible>*:nth-child(4){transition-delay:.26s}
+.wave-stagger.visible>*:nth-child(5){transition-delay:.33s}
+.wave-stagger.visible>*:nth-child(6){transition-delay:.4s}
+.wave-stagger.visible>*{opacity:1;transform:none}
 .hero h1{font-size:clamp(2.4rem,5.5vw,4rem);color:#fff;margin-bottom:20px;max-width:700px}
 .hero h1 em{font-style:normal;color:var(--cyan)}
 .hero p{font-size:1.15rem;color:rgba(255,255,255,.8);max-width:580px;margin-bottom:36px}
@@ -188,8 +250,13 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .tech-step h3{font-family:'Signika',sans-serif;font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:4px}
 .tech-step p{font-size:.88rem;color:var(--text)}
 .tech-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.video-wrapper{position:relative;padding-bottom:56.25%;height:0;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.video-wrapper{position:relative;padding-bottom:56.25%;height:0;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.12);cursor:pointer;background:#000}
 .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-wrapper img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.video-wrapper.playing img,.video-wrapper.playing .video-play-btn{display:none}
+.video-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(83,186,143,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;transition:all .3s;box-shadow:0 4px 24px rgba(83,186,143,.4)}
+.video-play-btn:hover{background:var(--cyan);transform:translate(-50%,-50%) scale(1.1);box-shadow:0 6px 32px rgba(83,186,143,.6)}
+.video-play-btn svg{width:28px;height:28px;fill:#fff;margin-left:3px}
 .tech-proof-caption{margin-top:14px;font-size:.88rem;color:var(--text);line-height:1.5}
 .tech-proof-caption strong{color:var(--heading)}
 .tech-pillars-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -380,6 +447,11 @@ footer a{color:var(--cyan)}
   .menu-toggle{display:flex;z-index:1001}
   .nav-logo{z-index:1001;position:relative}
   nav{background:rgba(29,61,143,.97)!important}
+  .lang-selector{margin-left:0;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);width:100%}
+  .lang-btn{width:100%;justify-content:center;padding:12px 16px;font-size:.9rem;border-radius:10px}
+  .lang-dropdown{position:relative;top:8px;right:auto;width:100%;transform:none;background:rgba(255,255,255,.06);border:none;box-shadow:none;max-height:0;overflow:hidden;padding:0;opacity:1;visibility:visible}
+  .lang-selector.open .lang-dropdown{max-height:300px;padding:6px}
+  .lang-option{padding:12px 16px;font-size:.95rem}
 
   /* SPACING & OVERFLOW FIX */
   .container{padding:0 16px}
@@ -535,6 +607,19 @@ footer a{color:var(--cyan)}
       <a href="#hydrogene">Hydrogène</a>
       <a href="#equipe">Équipe</a>
       <a href="#contact" class="nav-cta">Nous contacter</a>
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-btn" onclick="this.parentElement.classList.toggle('open')" aria-label="Changer de langue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          FR
+          <svg class="chevron" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+        </button>
+        <div class="lang-dropdown">
+          <a href="/" class="lang-option active"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a>
+          <a href="/en/" class="lang-option"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></a>
+          <a href="/ja/" class="lang-option"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
+          <a href="/pt/" class="lang-option"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span></a>
+        </div>
+      </div>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
   </div>
@@ -605,7 +690,7 @@ footer a{color:var(--cyan)}
 
 <div class="container">
   <div class="section-label reveal" style="text-align:center;margin-bottom:20px;margin-top:60px">Les conséquences de cette approche</div>
-  <div class="metrics reveal">
+  <div class="metrics reveal wave-stagger">
     <div class="metric"><div class="metric-value">&lt; 3g</div><div class="metric-label">eqCO₂/kWh<br>sur cycle de vie</div></div>
     <div class="metric"><div class="metric-value">&lt; 2€/kg</div><div class="metric-label">Hydrogène vert<br>le plus décarboné</div></div>
     <div class="metric"><div class="metric-value">50-90%</div><div class="metric-label">Facteur de charge estimé<br>(calculs internes, selon sites)</div></div>
@@ -621,7 +706,10 @@ footer a{color:var(--cyan)}
     <p class="section-subtitle reveal">Basé sur le principe des Colonnes d'Eau Oscillantes Multiples (OWC), HACE convertit la houle en flux d'air continu qui entraîne une turbine générant de l'électricité.</p>
     <div class="tech-grid">
       <div class="tech-visual reveal">
-        <div class="video-wrapper"><iframe src="https://www.youtube-nocookie.com/embed/pvssRtQQIFY" title="Turbine HACE en fonctionnement — mer quasi-plate" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-wrapper" id="ytPlayer" onclick="loadYT(this)">
+          <img src="https://img.youtube.com/vi/pvssRtQQIFY/maxresdefault.jpg" alt="Turbine HACE en fonctionnement — mer quasi-plate" width="1280" height="720">
+          <div class="video-play-btn" aria-label="Lire la vidéo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
         <div class="tech-visual-badge">🔊 Écoutez : plein régime sans vagues</div>
       </div>
       <div class="tech-steps">
@@ -643,7 +731,7 @@ footer a{color:var(--cyan)}
         </div>
       </div>
     </div>
-    <div class="tech-pillars-row reveal" style="margin-top:40px">
+    <div class="tech-pillars-row reveal wave-stagger" style="margin-top:40px">
       <div class="tech-pillar-item">
         <div class="tech-pillar-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
         <div><h4>Simple</h4><p>Turbine au sec, pièces &lt;25 kg. Maintenance avec des outils standard — sans plongeurs ni navires spéciaux.</p></div>
@@ -812,7 +900,7 @@ footer a{color:var(--cyan)}
         <span class="physics-stat-label">marge de sécurité</span>
       </div>
     </div>
-    <div class="physics-grid">
+    <div class="physics-grid wave-stagger">
       <div class="physics-card reveal">
         <div class="physics-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.5" width="28" height="28"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M2 12h20M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z"/></svg>
@@ -972,7 +1060,7 @@ footer a{color:var(--cyan)}
     <div class="section-label reveal">Équipe dirigeante</div>
     <h2 class="section-title reveal">Des experts reconnus</h2>
     <p class="section-subtitle reveal">Ingénieurs, Docteurs en sciences, experts offshore. Polytechnique, Supaéro, HEC, Centrale, SUPELEC, ENSAM, CNRS, MIT, ENA, Stanford…</p>
-    <div class="team-grid">
+    <div class="team-grid wave-stagger">
       <div class="team-card reveal"><div class="team-avatar">JLS</div><div class="team-name">Dr. Jean-Luc Stanek</div><div class="team-role">Président exécutif / CEO</div><div class="team-bg">Chevalier du Mérite Maritime</div></div>
       <div class="team-card reveal"><div class="team-avatar">CP</div><div class="team-name">Christian Pages</div><div class="team-role">Directeur R&D</div><div class="team-bg">Ex-Airbus · Expert aérodynamique</div></div>
     </div>
@@ -1054,6 +1142,11 @@ document.querySelectorAll('.reveal').forEach(el=>{
 /* COUNTER ANIMATION — metrics */
 const counterObs=new IntersectionObserver(entries=>{entries.forEach(el=>{if(el.isIntersecting){animateValue(el.target);counterObs.unobserve(el.target)}})},{threshold:.5});
 document.querySelectorAll('.metric-value').forEach(el=>counterObs.observe(el));
+
+/* 🌊 WAVE STAGGER — animate grid children on scroll */
+const waveObs=new IntersectionObserver(entries=>{entries.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');waveObs.unobserve(el.target)}})},{threshold:.1});
+document.querySelectorAll('.wave-stagger').forEach(el=>waveObs.observe(el));
+
 function animateValue(el){
   const text=el.textContent;
   const match=text.match(/([\d,.]+)/);
@@ -1086,7 +1179,11 @@ document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('c
 /* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){const y=t.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'})}navLinks.classList.remove('open');menuToggle.classList.remove('active');document.body.style.overflow=''})});
 
-/* LAZY VIDEO — load only when visible */
+/* LAZY VIDEO — load only when clicked */
+function loadYT(el){if(el.classList.contains('playing'))return;el.classList.add('playing');const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/pvssRtQQIFY?autoplay=1&start=36&rel=0';iframe.title='Turbine HACE en fonctionnement';iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:0';el.appendChild(iframe)}
+
+/* LANG SELECTOR — close on outside click */
+document.addEventListener('click',e=>{const ls=document.getElementById('langSelector');if(ls&&!ls.contains(e.target))ls.classList.remove('open')});
 </script>
 </body>
 </html>
