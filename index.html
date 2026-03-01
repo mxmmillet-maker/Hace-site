@@ -22,7 +22,10 @@
   <meta name="twitter:image" content="assets/images/hero-3d-render.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  
+  <link rel="preload" as="image" href="assets/images/hero-dark.jpg">
   <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
@@ -222,8 +225,17 @@ footer p{font-size:.8rem;color:rgba(255,255,255,.7)}
 footer a{color:var(--cyan)}
 
 /* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+/* HERO ENTRANCE */
+.hero-content{animation:heroIn .8s ease-out .2s both}
+@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.hero-badge{animation:heroIn .6s ease-out .4s both}
+.hero-actions{animation:heroIn .6s ease-out .6s both}
+.metrics{animation:heroIn .6s ease-out .5s both}
+/* PILLAR HOVER */
+.why-pillar{transition:box-shadow .3s,transform .3s}
+.why-pillar:hover{box-shadow:0 8px 32px rgba(0,0,0,.08);transform:translateY(-2px)}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -674,11 +686,15 @@ footer a{color:var(--cyan)}
         <div class="contact-detail" style="margin-top:20px">Technopole Montesquieu<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 Allée Jean Rostand<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;33650 Martillac, France</div>
       </div>
       <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Demande site HACE">
+        <input type="hidden" name="_cc" value="max@karlandmax.com">
+        <input type="hidden" name="_next" value="https://hacewaveenergy.com/#contact">
         <input type="text" name="name" placeholder="Nom complet" required>
         <input type="email" name="email" placeholder="Email professionnel" required>
         <input type="text" name="company" placeholder="Entreprise / Organisation">
         <textarea name="message" placeholder="Votre message..." required></textarea>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Envoyer le message</button>
+        <p style="font-size:.72rem;color:#888;margin-top:8px;text-align:center">Votre message sera envoyé directement à l'équipe HACE.</p>
       </form>
     </div>
   </div>
@@ -693,15 +709,57 @@ footer a{color:var(--cyan)}
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-const menuToggle=document.getElementById('menuToggle');
-const navLinks=document.getElementById('navLinks');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+/* NAV */
+const nav=document.getElementById('nav'),menuToggle=document.getElementById('menuToggle'),navLinks=document.getElementById('navLinks');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
 menuToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');menuToggle.classList.toggle('active');document.body.style.overflow=navLinks.classList.contains('open')?'hidden':''});
-const observer=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');observer.unobserve(el.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* REVEAL ON SCROLL — stagger siblings */
+const revealObs=new IntersectionObserver(entries=>{entries.forEach((el,i)=>{if(el.isIntersecting){const delay=el.target.dataset.delay||0;setTimeout(()=>el.target.classList.add('visible'),delay*100);revealObs.unobserve(el.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>{
+  const parent=el.parentElement;
+  const siblings=[...parent.querySelectorAll(':scope > .reveal')];
+  const idx=siblings.indexOf(el);
+  if(idx>0)el.dataset.delay=idx;
+  revealObs.observe(el);
+});
+
+/* COUNTER ANIMATION — metrics */
+const counterObs=new IntersectionObserver(entries=>{entries.forEach(el=>{if(el.isIntersecting){animateValue(el.target);counterObs.unobserve(el.target)}})},{threshold:.5});
+document.querySelectorAll('.metric-value').forEach(el=>counterObs.observe(el));
+function animateValue(el){
+  const text=el.textContent;
+  const match=text.match(/([\d,.]+)/);
+  if(!match)return;
+  const numStr=match[1];
+  const num=parseFloat(numStr.replace(/[,\s]/g,'').replace(',','.'));
+  if(isNaN(num))return;
+  const prefix=text.slice(0,text.indexOf(numStr));
+  const suffix=text.slice(text.indexOf(numStr)+numStr.length);
+  const hasDecimal=numStr.includes(',')&&!numStr.includes(' ');
+  const duration=800;
+  const start=performance.now();
+  function step(now){
+    const t=Math.min((now-start)/duration,1);
+    const ease=1-Math.pow(1-t,3);
+    let val=num*ease;
+    if(numStr.includes(' ')){val=Math.round(val).toLocaleString('fr-FR').replace(/\u202f/g,' ')}
+    else if(hasDecimal){val=val.toFixed(1).replace('.',',')}
+    else{val=Math.round(val)}
+    el.textContent=prefix+val+suffix;
+    if(t<1)requestAnimationFrame(step);
+    else el.textContent=text;
+  }
+  requestAnimationFrame(step);
+}
+
+/* FAQ */
 document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement,answer=item.querySelector('.faq-answer'),isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-answer').style.maxHeight=null});if(!isOpen){item.classList.add('open');answer.style.maxHeight=answer.scrollHeight+'px'}})});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});navLinks.classList.remove('open');menuToggle.classList.remove('active');document.body.style.overflow=''})});
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){const y=t.getBoundingClientRect().top+window.scrollY-70;window.scrollTo({top:y,behavior:'smooth'})}navLinks.classList.remove('open');menuToggle.classList.remove('active');document.body.style.overflow=''})});
+
+/* LAZY VIDEO — load only when visible */
 </script>
 </body>
 </html>
