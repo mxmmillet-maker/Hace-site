@@ -72,8 +72,20 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
 .btn-outline:hover{border-color:#fff;color:#fff}
 
+/* WHY HACE — PAIN > SOLUTION */
+.why{padding:100px 0}
+.why-grid{display:grid;gap:40px;margin-top:50px}
+.why-pillar{display:grid;grid-template-columns:1fr 1fr;border-radius:7px;overflow:hidden;border:1px solid #e8ecf0}
+.why-pain{padding:32px;background:#fef8f6;border-right:1px solid #e8ecf0}
+.why-pain h3{font-family:'Signika',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:#c0392b;margin-bottom:12px;font-weight:600}
+.why-pain p{font-size:.92rem;color:var(--text);line-height:1.6}
+.why-solution{padding:32px;background:#f4fbf8}
+.why-solution h3{font-family:'Signika',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--cyan);margin-bottom:12px;font-weight:600}
+.why-solution p{font-size:.92rem;color:var(--text);line-height:1.6}
+.why-solution strong{color:var(--heading);font-weight:600}
+
 /* METRICS */
-.metrics{position:relative;z-index:2;margin-top:-60px;background:#fff;border:1px solid #e8ecf0;border-radius:7px;padding:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;box-shadow:0 4px 24px rgba(29,61,143,.08)}
+.metrics{position:relative;z-index:2;margin-top:0;margin-bottom:40px;background:#fff;border:1px solid #e8ecf0;border-radius:7px;padding:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;box-shadow:0 4px 24px rgba(29,61,143,.08)}
 .metric{text-align:center}
 .metric-value{font-family:'Signika',sans-serif;font-size:2rem;color:var(--cyan);font-weight:700}
 .metric-label{font-size:.82rem;color:var(--text);margin-top:4px;line-height:1.4}
@@ -91,13 +103,12 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .tech-step h3{font-family:'Signika',sans-serif;font-size:1rem;font-weight:600;color:var(--heading);margin-bottom:4px}
 .tech-step p{font-size:.88rem;color:var(--text)}
 
-/* ADVANTAGES */
-.advantages{padding:100px 0;background:var(--navy-light)}
-.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.adv-card{padding:32px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:all .3s;border-top:3px solid var(--cyan)}
-.adv-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 8px 24px rgba(83,186,143,.1)}
-.adv-card h3{font-family:'Signika',sans-serif;font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:8px}
-.adv-card p{font-size:.9rem;color:var(--text)}
+/* SECONDARY ADVANTAGES */
+.secondary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.secondary-card{padding:24px;border-radius:7px;background:#fff;border:1px solid #e8ecf0;transition:all .3s;border-top:3px solid var(--cyan)}
+.secondary-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 8px 24px rgba(83,186,143,.1)}
+.secondary-card h3{font-family:'Signika',sans-serif;font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:8px}
+.secondary-card p{font-size:.9rem;color:var(--text)}
 
 /* SEA TRIALS */
 .sea-trials{padding:100px 0}
@@ -117,6 +128,14 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .app-card h3{font-family:'Signika',sans-serif;font-size:1.15rem;font-weight:600;color:var(--heading);margin-bottom:10px}
 .app-card p{font-size:.9rem;color:var(--text)}
 .app-tag{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:7px;font-size:.75rem;font-weight:600;background:rgba(83,186,143,.1);color:var(--cyan);border:1px solid rgba(83,186,143,.25)}
+
+/* MARKET */
+.market{padding:100px 0}
+.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:50px}
+.market-card{padding:32px;border-radius:7px;background:var(--navy-light);border:1px solid #e8ecf0}
+.market-card h3{font-family:'Signika',sans-serif;font-size:1.05rem;font-weight:600;color:var(--heading);margin-bottom:10px}
+.market-card p{font-size:.88rem;color:var(--text)}
+.market-stat{font-family:'Signika',sans-serif;font-size:1.6rem;font-weight:700;color:var(--cyan);margin-bottom:4px}
 
 /* HYDROGEN */
 .hydrogen{padding:100px 0;position:relative;overflow:hidden}
@@ -210,7 +229,7 @@ footer a{color:var(--cyan)}
 @media(max-width:1024px){
   .metrics{grid-template-columns:repeat(2,1fr)}
   .tech-grid,.coastal-content,.contact-grid{grid-template-columns:1fr}
-  .adv-grid,.test-grid,.h2-grid{grid-template-columns:1fr 1fr}
+  .secondary-grid,.test-grid,.h2-grid,.market-grid{grid-template-columns:1fr 1fr}
   .trials-grid{grid-template-columns:1fr 1fr}
   .team-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -227,18 +246,18 @@ footer a{color:var(--cyan)}
   /* SPACING & OVERFLOW FIX */
   .container{padding:0 16px}
   section{padding:60px 0}
-  .tech,.sea-trials,.hydrogen,.press,.testimonials,.team,.contact,.faq,.coastal,.advantages,.applications,.awards{padding:60px 0}
+  .tech,.sea-trials,.hydrogen,.press,.testimonials,.team,.contact,.faq,.coastal,.advantages,.applications,.awards,.market,.why{padding:60px 0}
   .section-title{font-size:1.6rem}
   .section-title br,.cta-section h2 br{display:none}
   .section-subtitle{font-size:.95rem}
 
   /* METRICS */
-  .metrics{grid-template-columns:1fr 1fr;gap:16px;padding:20px;margin-top:-36px;border-radius:7px}
+  .metrics{grid-template-columns:1fr 1fr;gap:16px;padding:20px;margin-top:0;border-radius:7px}
   .metric-value{font-size:1.3rem}
   .metric-label{font-size:.75rem}
 
   /* GRIDS → 1 COL */
-  .adv-grid,.app-grid,.test-grid,.h2-grid,.trials-grid{grid-template-columns:1fr}
+  .why-pillar,.secondary-grid,.app-grid,.test-grid,.h2-grid,.trials-grid,.market-grid{grid-template-columns:1fr}
   .team-grid{grid-template-columns:1fr}
 
   /* HERO */
@@ -250,7 +269,7 @@ footer a{color:var(--cyan)}
   .hero-actions .btn{width:100%;justify-content:center}
 
   /* CARDS padding reduce */
-  .adv-card,.app-card,.test-card,.h2-card{padding:24px}
+  .why-pain,.why-solution,.secondary-card,.app-card,.test-card,.h2-card,.market-card{padding:24px}
   .tech-step{padding:16px}
   .team-card{padding:20px}
 
@@ -282,13 +301,16 @@ footer a{color:var(--cyan)}
   body{background:#0f172a;color:#cbd5e1}
 
   /* Cards & surfaces */
-  .adv-card,.app-card,.award-item{background:#1e293b;border-color:#334155}
-  .tech-step,.h2-card,.test-card,.team-card{background:#1e293b;border-color:#334155}
+  .secondary-card,.app-card,.award-item{background:#1e293b;border-color:#334155}
+  .tech-step,.h2-card,.test-card,.team-card,.market-card{background:#1e293b;border-color:#334155}
+  .why-pillar{border-color:#334155}
+  .why-pain{background:#1e1a1a;border-color:#334155}
+  .why-solution{background:#152218}
   .metrics{background:#1e293b;border-color:#334155;box-shadow:0 4px 24px rgba(0,0,0,.3)}
 
   /* Sections with --navy-light bg */
   .advantages,.applications,.coastal,.awards,.faq{background:#111827}
-  .tech,.sea-trials,.hydrogen,.press,.testimonials,.team,.contact{background:#0f172a}
+  .tech,.sea-trials,.hydrogen,.press,.testimonials,.team,.contact,.market,.why{background:#0f172a}
 
   /* Form */
   .contact-form input,.contact-form textarea{background:#1e293b;border-color:#334155;color:#f1f5f9}
@@ -298,7 +320,7 @@ footer a{color:var(--cyan)}
   .faq-question{color:#f1f5f9}
 
   /* Borders global */
-  .adv-card:hover,.app-card:hover,.award-item:hover,.tech-step:hover{border-color:var(--cyan)}
+  .secondary-card:hover,.app-card:hover,.award-item:hover,.tech-step:hover{border-color:var(--cyan)}
 
   /* Press */
   .press-item span{color:#f1f5f9}
@@ -307,10 +329,10 @@ footer a{color:var(--cyan)}
 }
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"HACE - Hydro Air Concept Energy","url":"https://hacewaveenergy.com","logo":"https://hacewaveenergy.com/assets/images/logo-500.png","description":"HACE développe une technologie houlomotrice brevetée basée sur les Colonnes d'Eau Oscillantes Multiples. Énergie des vagues non-intermittente, ultra décarbonée (<3g CO₂/kWh), compétitive (<20€/MWh). Membre ZESTAs pour le transport maritime Absolute Zero.","foundingDate":"2015","memberOf":{"@type":"Organization","name":"ZESTAs - Zero Emissions Ship Technology Association","url":"https://zestas.org"},"address":{"@type":"PostalAddress","streetAddress":"Technopole Montesquieu, 1 Allée Jean Rostand","addressLocality":"Martillac","postalCode":"33650","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","telephone":"+33-6-85-60-79-30","email":"jean-luc.stanek@hacewave.com","contactType":"sales"}}
+  {"@context":"https://schema.org","@type":"Organization","name":"HACE - Hydro Air Concept Energy","url":"https://hacewaveenergy.com","logo":"https://hacewaveenergy.com/assets/images/logo-500.png","description":"HACE développe une technologie houlomotrice brevetée basée sur les Colonnes d'Eau Oscillantes Multiples. Énergie des vagues non-intermittente, ultra décarbonée (<3g CO₂/kWh), compétitive (<35€/MWh). Membre ZESTAs pour le transport maritime Absolute Zero.","foundingDate":"2015","memberOf":{"@type":"Organization","name":"ZESTAs - Zero Emissions Ship Technology Association","url":"https://zestas.org"},"address":{"@type":"PostalAddress","streetAddress":"Technopole Montesquieu, 1 Allée Jean Rostand","addressLocality":"Martillac","postalCode":"33650","addressCountry":"FR"},"contactPoint":{"@type":"ContactPoint","telephone":"+33-6-85-60-79-30","email":"jean-luc.stanek@hacewave.com","contactType":"sales"}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment fonctionne la technologie HACE ?","acceptedAnswer":{"@type":"Answer","text":"HACE utilise le principe des Colonnes d'Eau Oscillantes Multiples. La houle comprime l'air dans des chambres via des soupapes unidirectionnelles, créant un flux continu qui actionne une turbine générant de l'électricité."}},{"@type":"Question","name":"Quel est le bilan carbone de HACE ?","acceptedAnswer":{"@type":"Answer","text":"Moins de 3 grammes eqCO₂ par kWh sur cycle de vie. L'une des sources d'énergie les plus décarbonées existantes."}},{"@type":"Question","name":"HACE fonctionne-t-elle par tous les temps ?","acceptedAnswer":{"@type":"Answer","text":"Oui. HACE capte l'énergie de toutes les vagues, de 5 cm à plus de 30 m. Insubmersible, résiste aux cyclones et tsunamis."}},{"@type":"Question","name":"Quel est le coût de l'énergie produite ?","acceptedAnswer":{"@type":"Answer","text":"Moins de 20€/MWh avec effet d'échelle, pouvant descendre sous 2 centimes/kWh pour des installations GW."}},{"@type":"Question","name":"HACE produit-elle de l'hydrogène vert ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Production stable idéale pour électrolyseurs. Hydrogène vert à moins de 2€/kg, le plus décarboné du marché."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment fonctionne la technologie HACE ?","acceptedAnswer":{"@type":"Answer","text":"HACE utilise le principe des Colonnes d'Eau Oscillantes Multiples. La houle comprime l'air dans des chambres via des soupapes unidirectionnelles, créant un flux continu qui actionne une turbine générant de l'électricité."}},{"@type":"Question","name":"Quel est le bilan carbone de HACE ?","acceptedAnswer":{"@type":"Answer","text":"Moins de 3 grammes eqCO₂ par kWh sur cycle de vie. L'une des sources d'énergie les plus décarbonées existantes."}},{"@type":"Question","name":"HACE fonctionne-t-elle par tous les temps ?","acceptedAnswer":{"@type":"Answer","text":"Oui. HACE capte l'énergie de toutes les vagues, de 5 cm à plus de 30 m. Insubmersible, résiste aux cyclones et tsunamis."}},{"@type":"Question","name":"Quel est le coût de l'énergie produite ?","acceptedAnswer":{"@type":"Answer","text":"LCOE estimé inférieur à 35€/MWh à partir de 100 MW installés (calculs internes, validation par tiers en cours)."}},{"@type":"Question","name":"HACE produit-elle de l'hydrogène vert ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Production stable idéale pour électrolyseurs. Hydrogène vert à moins de 2€/kg, le plus décarboné du marché."}}]}
   </script>
 </head>
 <body>
@@ -321,9 +343,11 @@ footer a{color:var(--cyan)}
       <img src="assets/images/logo-white.png" alt="HACE — Hydro Air Concept Energy" height="32">
     </a>
     <div class="nav-links" id="navLinks">
+      <a href="#concept">Concept</a>
       <a href="#technologie">Technologie</a>
       <a href="#essais">Essais en mer</a>
       <a href="#applications">Applications</a>
+      <a href="#marche">Marché</a>
       <a href="#hydrogene">Hydrogène</a>
       <a href="#equipe">Équipe</a>
       <a href="#contact" class="nav-cta">Nous contacter</a>
@@ -351,13 +375,59 @@ footer a{color:var(--cyan)}
   </div>
 </section>
 
+<section class="why" id="concept">
+  <div class="container">
+    <div class="section-label reveal">L'approche HACE</div>
+    <h2 class="section-title reveal">Pourquoi les houlomoteurs échouent. <br>Et pourquoi HACE réussit.</h2>
+    <p class="section-subtitle reveal">Trois ruptures fondamentales qui changent l'équation économique de l'énergie des vagues.</p>
+    <div class="why-grid">
+
+      <div class="why-pillar reveal">
+        <div class="why-pain">
+          <h3>Le problème</h3>
+          <p>Les houlomoteurs actuels ont une conception identique quel que soit le site d'implantation. Résultat : un facteur de charge faible, et un coût de l'énergie qui ne baisse jamais.</p>
+        </div>
+        <div class="why-solution">
+          <h3>La réponse HACE</h3>
+          <p><strong>Chaque système est conçu sur mesure pour son site</strong> afin de maximiser le facteur de charge — la clé de la réussite économique. Le faible coût de l'électricité est la conséquence directe de cette approche.</p>
+        </div>
+      </div>
+
+      <div class="why-pillar reveal">
+        <div class="why-pain">
+          <h3>Le problème</h3>
+          <p>Les autres houlomoteurs s'arrêtent ou se protègent par mauvais temps. Chaque heure d'arrêt fait chuter le facteur de charge et rend le modèle économique intenable.</p>
+        </div>
+        <div class="why-solution">
+          <h3>La réponse HACE</h3>
+          <p><strong>HACE produit dans les pires conditions</strong> — cyclones, vagues scélérates, tsunamis. Plus la mer est forte, plus la production augmente. Le système est insubmersible et conçu pour durer plus de 50 ans.</p>
+        </div>
+      </div>
+
+      <div class="why-pillar reveal">
+        <div class="why-pain">
+          <h3>Le problème</h3>
+          <p>La complexité de certains houlomoteurs empêche un déploiement massif. Ils nécessitent des moyens lourds et coûteux — grues de grande capacité, navires spécialisés, composants sur mesure.</p>
+        </div>
+        <div class="why-solution">
+          <h3>La réponse HACE</h3>
+          <p><strong>HACE se fabrique dans n'importe quel chantier naval</strong>, sans moyen lourd. Colonnes d'eau oscillantes en acier standard, approche industrielle de production de masse. Plus de 95% recyclable.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <div class="container">
+  <div class="section-label reveal" style="text-align:center;margin-bottom:20px;margin-top:60px">Les conséquences de cette approche</div>
   <div class="metrics reveal">
     <div class="metric"><div class="metric-value">&lt; 3g</div><div class="metric-label">eqCO₂/kWh<br>sur cycle de vie</div></div>
     <div class="metric"><div class="metric-value">&lt; 2€/kg</div><div class="metric-label">Hydrogène vert<br>le plus décarboné</div></div>
-    <div class="metric"><div class="metric-value">50-90%</div><div class="metric-label">Facteur de charge<br>supérieur à toute EMR</div></div>
-    <div class="metric"><div class="metric-value">&lt; 20€</div><div class="metric-label">/MWh avec effet d'échelle<br>parité réseau</div></div>
+    <div class="metric"><div class="metric-value">50-90%</div><div class="metric-label">Facteur de charge estimé<br>(calculs internes, selon sites)</div></div>
+    <div class="metric"><div class="metric-value">&lt; 35€</div><div class="metric-label">/MWh à partir de 100 MW<br>parité réseau</div></div>
   </div>
+  <p class="reveal" style="text-align:center;font-size:.78rem;color:#888;margin-top:12px;font-style:italic">Facteur de charge et LCOE : estimations basées sur nos modèles de calculs internes. Validation par tiers en cours.</p>
 </div>
 
 <section class="tech" id="technologie">
@@ -399,15 +469,12 @@ footer a{color:var(--cyan)}
 
 <section class="advantages">
   <div class="container">
-    <div class="section-label reveal">Avantages décisifs</div>
-    <h2 class="section-title reveal">Pourquoi HACE surpasse <br>les autres EMR</h2>
-    <div class="adv-grid">
-      <div class="adv-card reveal"><h3>Non-intermittente</h3><p>Facteur de charge de 50 à 90% selon le site. Production stable 24h/24, supérieure à toute autre énergie marine renouvelable.</p></div>
-      <div class="adv-card reveal"><h3>Insubmersible & résiliente</h3><p>Résiste aux cyclones, vagues scélérates et tsunamis. Durée de vie supérieure à 50 ans, validée par simulations numériques.</p></div>
-      <div class="adv-card reveal"><h3>Modulaire</h3><p>De 1 MW à plusieurs GW par site. Moins de 4 ans pour des milliers de MW : réponse à l'urgence climatique.</p></div>
-      <div class="adv-card reveal"><h3>95% recyclable</h3><p>Zéro béton, installation par ancrages. Acier recyclable à plus de 95% de la masse. Moins de 300 T/MW.</p></div>
-      <div class="adv-card reveal"><h3>Acceptabilité sociale</h3><p>Moins de 5 m hors de l'eau, aucune obstruction de vue. Aucun fluide polluant, aucun impact sur les écosystèmes.</p></div>
-      <div class="adv-card reveal"><h3>Protection côtière</h3><p>Déphasage des vagues contre l'érosion. Rechargement naturel des plages en sable. Double usage, double valeur.</p></div>
+    <div class="section-label reveal">Et aussi</div>
+    <h2 class="section-title reveal">Des avantages que personne <br>d'autre ne propose</h2>
+    <div class="secondary-grid">
+      <div class="secondary-card reveal"><h3>Scalable de 1 MW au GW</h3><p>Architecture modulaire en étoile, ligne ou chevron. Déploiement de milliers de MW en moins de 4 ans — une réponse à l'urgence climatique.</p></div>
+      <div class="secondary-card reveal"><h3>Invisible et accepté</h3><p>Moins de 5 m hors de l'eau, aucune obstruction de vue. Zéro fluide polluant, zéro impact sur les écosystèmes. Acceptabilité sociale maximale.</p></div>
+      <div class="secondary-card reveal"><h3>Protection côtière intégrée</h3><p>Déphasage des vagues contre l'érosion. Rechargement naturel des plages en sable. Produit de l'énergie et protège le littoral — double valeur.</p></div>
     </div>
   </div>
 </section>
@@ -447,13 +514,43 @@ footer a{color:var(--cyan)}
   </div>
 </section>
 
+<section class="market" id="marche">
+  <div class="container">
+    <div class="section-label reveal">Marché cible</div>
+    <h2 class="section-title reveal">Un potentiel mondial <br>à forte demande</h2>
+    <p class="section-subtitle reveal">L'énergie houlomotrice adresse des marchés concrets, solvables et en croissance, sur tous les littoraux du monde.</p>
+    <div class="market-grid">
+      <div class="market-card reveal">
+        <div class="market-stat">29 500 TWh/an</div>
+        <h3>Ressource houlomotrice mondiale</h3>
+        <p>Potentiel théorique estimé par l'AIE. La consommation mondiale d'électricité est d'environ 25 000 TWh/an. La houle seule pourrait y répondre.</p>
+      </div>
+      <div class="market-card reveal">
+        <div class="market-stat">2 milliards</div>
+        <h3>Personnes à moins de 100 km d'un littoral</h3>
+        <p>Îles, zones côtières, pays en développement : une demande structurelle en énergie décarbonée et en eau douce par désalinisation.</p>
+      </div>
+      <div class="market-card reveal">
+        <div class="market-stat">3% des émissions GES</div>
+        <h3>Transport maritime à décarboner</h3>
+        <p>Réglementations OMI et UE en cours. HACE fournit l'énergie « Absolute Zero » pour les ports, l'avitaillement H₂ et l'alimentation à quai.</p>
+      </div>
+      <div class="market-card reveal">
+        <div class="market-stat">Marchés prioritaires</div>
+        <h3>Europe, Îles, Afrique, Pacifique</h3>
+        <p>Territoires insulaires (coût diesel 300-500€/MWh), façades atlantiques européennes, côtes africaines, Caraïbes et Pacifique Sud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hydrogen" id="hydrogene">
   <div class="container">
     <div class="section-label reveal">Écosystème hydrogène</div>
     <h2 class="section-title reveal">Les clés de l'hydrogène vert <br>compétitif</h2>
     <p class="section-subtitle reveal">Un partenariat stratégique réunissant les meilleures technologies pour une chaîne de valeur H₂ complète.</p>
     <div class="h2-grid">
-      <div class="h2-card reveal"><h3>HACE — Production d'énergie</h3><p>Énergie stable et ultra décarbonée (&lt; 15€/MWh à l'échelle GW, &lt; 1g eqCO₂/kWh) pour alimenter des électrolyseurs en continu.</p></div>
+      <div class="h2-card reveal"><h3>HACE — Production d'énergie</h3><p>Énergie stable et ultra décarbonée (&lt; 35€/MWh, &lt; 3g eqCO₂/kWh) pour alimenter des électrolyseurs en continu.</p></div>
       <div class="h2-card reveal"><h3>SHZ — Stockage révolutionnaire</h3><p>Réservoirs H₂ 20 fois plus légers que l'existant : 1 tonne de réservoir pour 1 tonne d'H₂ transportée. Révolutionne les transports.</p></div>
       <div class="h2-card reveal"><h3>H2X — Écosystèmes d'usage</h3><p>Solutions complètes pour l'utilisation de l'hydrogène vert. Décarbonation des transports terrestres, maritimes et aériens.</p></div>
       <div class="h2-card reveal"><h3>ZESTAs — Transport maritime zéro émission</h3><p>Alliance mondiale de 50+ acteurs pour le transport maritime « Absolute Zero ». HACE fournit l'énergie propre non-intermittente pour navires et ports.</p></div>
@@ -531,7 +628,7 @@ footer a{color:var(--cyan)}
       <div class="faq-item reveal"><button class="faq-question">Comment fonctionne la technologie HACE ?</button><div class="faq-answer"><p>HACE utilise le principe des Colonnes d'Eau Oscillantes Multiples. La houle entre dans des chambres ouvertes sous l'eau, comprime l'air via des soupapes unidirectionnelles, créant un flux d'air continu qui actionne une turbine. Le système fonctionne comme un moteur à piston alimenté par les vagues, optimisé sur tout le spectre de houle.</p></div></div>
       <div class="faq-item reveal"><button class="faq-question">HACE fonctionne-t-elle par tous les temps ?</button><div class="faq-answer"><p>Oui. HACE capte l'énergie de toutes les vagues, même chaotiques, de 5 cm à plus de 30 m. Insubmersible, résistante aux cyclones, vagues scélérates et tsunamis. Durée de vie validée supérieure à 50 ans par calculs et simulations numériques.</p></div></div>
       <div class="faq-item reveal"><button class="faq-question">Quel est le bilan carbone réel ?</button><div class="faq-answer"><p>Moins de 3g eqCO₂/kWh sur cycle de vie. Comparaison : solaire ~40g, éolien ~11g, nucléaire ~6g. HACE atteint ce résultat grâce à sa construction 95% recyclable en acier, sans béton.</p></div></div>
-      <div class="faq-item reveal"><button class="faq-question">Quel est le coût de l'énergie produite ?</button><div class="faq-answer"><p>LCOE inférieur à 20€/MWh avec effet d'échelle, sous 2 centimes/kWh pour des champs de 1 000 MW. Facteur de charge de 50 à 90% — supérieur à toute autre EMR.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-question">Quel est le coût de l'énergie produite ?</button><div class="faq-answer"><p>LCOE estimé inférieur à 35€/MWh à partir de 100 MW installés, d'après nos modèles de calculs internes. Le facteur de charge élevé (50 à 90% selon les sites) et la conception site-spécifique sont les clés de cette compétitivité. Validation par tiers en cours.</p></div></div>
       <div class="faq-item reveal"><button class="faq-question">Comment HACE produit-elle de l'hydrogène vert ?</button><div class="faq-answer"><p>Production stable non-intermittente idéale pour électrolyseurs en continu. Résultat : H₂ vert à moins de 2€/kg. En partenariat avec SHZ (stockage 20x plus léger) et H2X (écosystèmes d'usage).</p></div></div>
       <div class="faq-item reveal"><button class="faq-question">Quel est l'impact environnemental ?</button><div class="faq-answer"><p>Impact minimal : zéro béton, aucun fluide polluant, moins de 5 m hors de l'eau, ancrages bio-dynamisants. Bonus : protection active des côtes contre l'érosion et rechargement naturel des plages.</p></div></div>
     </div>
