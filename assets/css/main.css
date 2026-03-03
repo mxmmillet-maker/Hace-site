@@ -277,9 +277,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .team-card:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 20px rgba(83,186,143,.1)}
 .team-avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;overflow:hidden}
 .team-avatar img{width:100%;height:100%;object-fit:cover}
-.team-name{font-size:1rem;font-weight:600;color:var(--heading)}
-.team-role{font-size:.82rem;color:var(--text);margin-top:2px}
-.team-bg{font-size:.78rem;color:var(--cyan);margin-top:6px;font-weight:500}
+.team-name{font-size:1rem;font-weight:600;color:var(--heading);margin:0}
+.team-role{font-size:.82rem;color:var(--text);margin:2px 0 0}
+.team-bg{font-size:.78rem;color:var(--cyan);margin:6px 0 0;font-weight:500}
 
 /* CTA */
 .cta-section{padding:100px 0;text-align:center;background:var(--navy);color:#fff}
