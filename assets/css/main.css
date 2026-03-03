@@ -443,7 +443,10 @@ footer a{color:var(--cyan)}
   .cta-actions .btn{width:100%;justify-content:center}
 
   /* CONTACT */
+  .contact-grid{gap:24px;margin-top:28px}
   .contact-detail{font-size:.85rem}
+  .contact-detail br{display:block}
+  .contact-address{display:block;line-height:1.7}
 
   /* AWARDS smaller grid */
   .awards-timeline{grid-template-columns:repeat(2,1fr);gap:12px}
@@ -522,7 +525,11 @@ footer a{color:var(--cyan)}
   .tech,.sea-trials,.hydrogen,.press,.testimonials,.team,.contact,.market,.why,.physics{background:#0f172a}
 
   /* Form */
-  .contact-form input,.contact-form textarea{background:#1e293b;border-color:#334155;color:#f1f5f9}
+  .contact-form input,.contact-form textarea{background:#1e293b;border-color:#475569;color:#f1f5f9}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#94a3b8}
+  .contact-info h3{color:#f1f5f9}
+  .contact-info p{color:#94a3b8}
+  .contact-detail{color:#cbd5e1}
 
   /* FAQ */
   .faq-item{border-color:#334155}
