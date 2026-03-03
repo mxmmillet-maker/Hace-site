@@ -248,45 +248,41 @@
     <h2 class="section-title reveal" style="text-align:center">海洋試験 — その証拠</h2>
     <p class="section-subtitle reveal" style="text-align:center">10cmの波。タービンはフル回転。</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+    <div class="proof-grid">
 
-      <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
+      <!-- Main photo -->
+      <div class="proof-main reveal">
         <img src="../assets/images/sea-trial-2.jpg"
              alt="外洋でのHACEプロトタイプ — 2019年試験"
-             loading="lazy"
-             style="width:100%;height:340px;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-          <div style="color:var(--cyan);font-size:.78rem;font-weight:600;margin-bottom:4px">プロトタイプ2 · 外洋 · 2019</div>
-          <div style="color:#fff;font-size:.92rem">初の海洋試験。波への耐性と発電を確認。</div>
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-tag">プロトタイプ2 · 外洋 · 2019</div>
+          <div class="proof-caption-text">初の海洋試験。波への耐性と発電を確認。</div>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-rows:1fr 1fr;gap:16px">
-
-        <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
-          <img src="../assets/images/sea-trial-aerial.jpg"
-               alt="HACEプロトタイプの航空写真"
-               loading="lazy"
-               style="width:100%;height:160px;object-fit:cover;display:block">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-            <div style="color:#fff;font-size:.85rem">プロトタイプ3 · 大西洋 · 2023 — 1/10スケールモジュール</div>
-          </div>
+      <!-- Aerial photo -->
+      <div class="proof-aerial reveal">
+        <img src="../assets/images/sea-trial-aerial.jpg"
+             alt="HACEプロトタイプの航空写真"
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-text">プロトタイプ3 · 大西洋 · 2023 — 1/10スケールモジュール</div>
         </div>
-
-        <div onclick="loadYT(this)" class="reveal"
-           style="display:block;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:16/9">
-          <img src="../assets/images/thumbnails/hace-video-ja.jpg"
-               alt="動画 — 10cmの波、タービンフル回転"
-               loading="lazy"
-               style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-            <div style="width:60px;height:60px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- YouTube video -->
+      <div class="proof-video reveal" onclick="loadYT(this)">
+        <img src="../assets/images/thumbnails/hace-video-ja.jpg"
+             alt="動画 — 10cmの波、タービンフル回転"
+             loading="lazy">
+        <div class="proof-play">
+          <div class="proof-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

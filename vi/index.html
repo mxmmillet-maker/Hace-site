@@ -248,45 +248,41 @@
     <h2 class="section-title reveal" style="text-align:center">Thử nghiệm trên biển — bằng chứng</h2>
     <p class="section-subtitle reveal" style="text-align:center">Sóng 10 cm. Turbine chạy hết tốc lực.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+    <div class="proof-grid">
 
-      <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
+      <!-- Main photo -->
+      <div class="proof-main reveal">
         <img src="../assets/images/sea-trial-2.jpg"
              alt="Nguyên mẫu HACE trên biển khơi — thử nghiệm 2019"
-             loading="lazy"
-             style="width:100%;height:340px;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-          <div style="color:var(--cyan);font-size:.78rem;font-weight:600;margin-bottom:4px">Nguyên mẫu 2 · Biển khơi · 2019</div>
-          <div style="color:#fff;font-size:.92rem">Thử nghiệm biển đầu tiên. Khả năng chịu sóng và sản xuất điện đã được xác nhận.</div>
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-tag">Nguyên mẫu 2 · Biển khơi · 2019</div>
+          <div class="proof-caption-text">Thử nghiệm biển đầu tiên. Khả năng chịu sóng và sản xuất điện đã được xác nhận.</div>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-rows:1fr 1fr;gap:16px">
-
-        <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
-          <img src="../assets/images/sea-trial-aerial.jpg"
-               alt="Ảnh trên không nguyên mẫu HACE"
-               loading="lazy"
-               style="width:100%;height:160px;object-fit:cover;display:block">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-            <div style="color:#fff;font-size:.85rem">Nguyên mẫu 3 · Đại Tây Dương · 2023 — mô-đun tỷ lệ 1/10</div>
-          </div>
+      <!-- Aerial photo -->
+      <div class="proof-aerial reveal">
+        <img src="../assets/images/sea-trial-aerial.jpg"
+             alt="Ảnh trên không nguyên mẫu HACE"
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-text">Nguyên mẫu 3 · Đại Tây Dương · 2023 — mô-đun tỷ lệ 1/10</div>
         </div>
-
-        <div onclick="loadYT(this)" class="reveal"
-           style="display:block;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:16/9">
-          <img src="../assets/images/thumbnails/hace-video-ja.jpg"
-               alt="Video — sóng 10 cm, turbine chạy hết tốc lực"
-               loading="lazy"
-               style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-            <div style="width:60px;height:60px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- YouTube video -->
+      <div class="proof-video reveal" onclick="loadYT(this)">
+        <img src="../assets/images/thumbnails/hace-video-ja.jpg"
+             alt="Video — sóng 10 cm, turbine chạy hết tốc lực"
+             loading="lazy">
+        <div class="proof-play">
+          <div class="proof-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

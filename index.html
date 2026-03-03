@@ -197,48 +197,41 @@
     <h2 class="section-title reveal" style="text-align:center">Essais en mer — la preuve</h2>
     <p class="section-subtitle reveal" style="text-align:center">10 cm de vagues. Turbine à plein régime.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px">
+    <div class="proof-grid">
 
       <!-- Photo principale -->
-      <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
+      <div class="proof-main reveal">
         <img src="assets/images/sea-trial-2.jpg"
              alt="Prototype HACE en mer ouverte — essai 2019"
-             loading="lazy"
-             style="width:100%;height:340px;object-fit:cover;display:block">
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-          <div style="color:var(--cyan);font-size:.78rem;font-weight:600;margin-bottom:4px">Prototype 2 · Mer ouverte · 2019</div>
-          <div style="color:#fff;font-size:.92rem">Premier essai en mer. Tenue à la houle et production électrique validées.</div>
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-tag">Prototype 2 · Mer ouverte · 2019</div>
+          <div class="proof-caption-text">Premier essai en mer. Tenue à la houle et production électrique validées.</div>
         </div>
       </div>
 
-      <!-- Vue aérienne + vidéo -->
-      <div style="display:grid;grid-template-rows:1fr 1fr;gap:16px">
-
-        <div class="reveal" style="border-radius:14px;overflow:hidden;position:relative">
-          <img src="assets/images/sea-trial-aerial.jpg"
-               alt="Vue aérienne prototype HACE"
-               loading="lazy"
-               style="width:100%;height:160px;object-fit:cover;display:block">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:linear-gradient(transparent,rgba(0,0,0,.7))">
-            <div style="color:#fff;font-size:.85rem">Prototype 3 · Atlantique · 2023 — module 1/10e échelle</div>
-          </div>
+      <!-- Vue aérienne -->
+      <div class="proof-aerial reveal">
+        <img src="assets/images/sea-trial-aerial.jpg"
+             alt="Vue aérienne prototype HACE"
+             loading="lazy">
+        <div class="proof-caption">
+          <div class="proof-caption-text">Prototype 3 · Atlantique · 2023 — module 1/10e échelle</div>
         </div>
-
-        <!-- Lien vidéo YouTube -->
-        <div onclick="loadYT(this)" class="reveal"
-           style="display:block;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:16/9">
-          <img src="assets/images/thumbnails/hace-video-fr.jpg"
-               alt="Vidéo — 10 cm de vagues, turbine à plein régime"
-               loading="lazy"
-               style="width:100%;height:100%;object-fit:cover;display:block">
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-            <div style="width:60px;height:60px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3)">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Vidéo YouTube -->
+      <div class="proof-video reveal" onclick="loadYT(this)">
+        <img src="assets/images/thumbnails/hace-video-fr.jpg"
+             alt="Vidéo — 10 cm de vagues, turbine à plein régime"
+             loading="lazy">
+        <div class="proof-play">
+          <div class="proof-play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div style="text-align:center;margin-top:36px">
