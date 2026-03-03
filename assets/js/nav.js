@@ -80,3 +80,24 @@ document.querySelectorAll('.faq-question').forEach(function(btn){
 
 /* LANG SELECTOR — close on outside click */
 document.addEventListener('click',e=>{document.querySelectorAll('.lang-selector').forEach(ls=>{if(!ls.contains(e.target))ls.classList.remove('open')})});
+
+/* MOBILE VIDEO AUTOPLAY FALLBACK */
+(function(){
+  var videos=document.querySelectorAll('.hero-bg video');
+  if(!videos.length)return;
+  // Try to play immediately
+  videos.forEach(function(v){
+    var p=v.play();
+    if(p&&p.catch)p.catch(function(){});
+  });
+  // Fallback: play on first user interaction
+  function forcePlay(){
+    videos.forEach(function(v){
+      if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){});}
+    });
+    document.removeEventListener('touchstart',forcePlay);
+    document.removeEventListener('click',forcePlay);
+  }
+  document.addEventListener('touchstart',forcePlay,{once:true,passive:true});
+  document.addEventListener('click',forcePlay,{once:true});
+})();
