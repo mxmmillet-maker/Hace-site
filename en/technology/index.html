@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YH3MEZKW27"></script>
+<!-- Google Analytics — chargé uniquement après consentement cookies -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YH3MEZKW27');
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+function loadGA(){
+  if(document.querySelector('script[src*="googletagmanager"]'))return;
+  var s=document.createElement('script');
+  s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-YH3MEZKW27';
+  document.head.appendChild(s);
+  gtag('js',new Date());
+  gtag('config','G-YH3MEZKW27',{anonymize_ip:true});
+}
+if(localStorage.getItem('hace_cookies')==='accepted')loadGA();
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -402,7 +408,7 @@
   <div class="container">
     <img src="../../assets/images/logo-white.png" alt="HACE" class="footer-logo" height="28" style="opacity:.8;margin:0 auto 16px">
     <p>© 2026 HACE — Hydro Air Concept Energy · <a href="https://hacewaveenergy.com">hacewaveenergy.com</a></p>
-    <p style="margin-top:8px;font-size:.75rem;opacity:.5"><a href="/confidentialite/" style="color:rgba(255,255,255,.5);text-decoration:underline">Politique de confidentialité</a></p>
+    <p style="margin-top:8px;font-size:.75rem;opacity:.5"><a href="/mentions-legales/" style="color:rgba(255,255,255,.5);text-decoration:underline">Mentions légales</a> · <a href="/confidentialite/" style="color:rgba(255,255,255,.5);text-decoration:underline">Politique de confidentialité</a></p>
     <p style="margin-top:8px;font-size:.75rem;opacity:.5;">Non-intermittent wave energy production machines for power grid operators</p>
   </div>
 </footer>
@@ -451,5 +457,20 @@
   </script>
 
 <script src="../../assets/js/hace-3d.js" defer></script>
+<!-- Cookie consent banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:99999;background:rgba(13,26,48,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(83,186,143,.3);padding:16px 24px;font-family:'Inter',sans-serif;font-size:.85rem;color:rgba(255,255,255,.85)">
+  <div style="max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px">
+    <p style="flex:1;min-width:280px;margin:0;line-height:1.5">Ce site utilise Google Analytics pour mesurer l'audience. Aucun cookie publicitaire n'est utilisé. <a href="/confidentialite/" style="color:#53BA8F;text-decoration:underline">En savoir plus</a></p>
+    <div style="display:flex;gap:10px;flex-shrink:0">
+      <button onclick="acceptCookies()" style="background:#53BA8F;color:#fff;border:none;padding:8px 20px;border-radius:5px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit">Accepter</button>
+      <button onclick="refuseCookies()" style="background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);padding:8px 20px;border-radius:5px;font-size:.85rem;cursor:pointer;font-family:inherit">Refuser</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('hace_cookies','accepted');document.getElementById('cookieBanner').style.display='none';loadGA()}
+function refuseCookies(){localStorage.setItem('hace_cookies','refused');document.getElementById('cookieBanner').style.display='none'}
+(function(){var c=localStorage.getItem('hace_cookies');if(!c)document.getElementById('cookieBanner').style.display='block'})();
+</script>
 </body>
 </html>
