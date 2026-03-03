@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage FR (racine) -->
+  <url>
+    <loc>https://hacewaveenergy.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr"    href="https://hacewaveenergy.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://hacewaveenergy.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt"    href="https://hacewaveenergy.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ja"    href="https://hacewaveenergy.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="es"    href="https://hacewaveenergy.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="id"    href="https://hacewaveenergy.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi"    href="https://hacewaveenergy.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hacewaveenergy.com/"/>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://hacewaveenergy.com/en/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hacewaveenergy.com/pt/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/ja/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/es/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/id/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/vi/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Technologie -->
+  <url>
+    <loc>https://hacewaveenergy.com/technologie/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hacewaveenergy.com/technologie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hacewaveenergy.com/en/technology/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://hacewaveenergy.com/pt/tecnologia/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hacewaveenergy.com/ja/technology/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hacewaveenergy.com/es/tecnologia/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hacewaveenergy.com/id/teknologi/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hacewaveenergy.com/vi/cong-nghe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hacewaveenergy.com/technologie/"/>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://hacewaveenergy.com/en/technology/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/pt/tecnologia/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/ja/technology/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/es/tecnologia/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/id/teknologi/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/vi/cong-nghe/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Avantages / Pourquoi HACE -->
+  <url>
+    <loc>https://hacewaveenergy.com/avantages/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hacewaveenergy.com/avantages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hacewaveenergy.com/en/why-hace/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://hacewaveenergy.com/pt/por-que-hace/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hacewaveenergy.com/ja/why-hace/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hacewaveenergy.com/es/por-que-hace/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://hacewaveenergy.com/id/mengapa-hace/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hacewaveenergy.com/vi/tai-sao-hace/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hacewaveenergy.com/avantages/"/>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://hacewaveenergy.com/en/why-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hacewaveenergy.com/pt/por-que-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/ja/why-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/es/por-que-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/id/mengapa-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hacewaveenergy.com/vi/tai-sao-hace/</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+</urlset>

@@ -1,0 +1,13 @@
+# HACE Wave Energy - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hacewaveenergy.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Block common non-content paths
+Disallow: /.claude/
+Disallow: /.git/
