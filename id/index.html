@@ -126,6 +126,7 @@
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
+<a href="#content" class="skip-link" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:#1D3D8F;color:#fff;padding:12px 24px;z-index:10000;font-size:.9rem;border-radius:0 0 6px 6px;text-decoration:none;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Langsung ke konten</a>
 
 <header role="banner">
 <nav id="nav">
@@ -144,13 +145,13 @@
           <svg class="chevron" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
         </button>
         <div class="lang-dropdown">
-          <a href="../" class="lang-option"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a>
-          <a href="../en/" class="lang-option"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></a>
-          <a href="../pt/" class="lang-option"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span></a>
-          <a href="../ja/" class="lang-option"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
-          <a href="../es/" class="lang-option"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></a>
-          <a href="../id/" class="lang-option active"><span class="lang-flag">🇮🇩</span><span class="lang-name">Indonesia</span></a>
-          <a href="../vi/" class="lang-option"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
+          <a href="../" class="lang-option"><span class="lang-flag" aria-hidden="true">🇫🇷</span><span class="lang-name">Français</span></a>
+          <a href="../en/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇬🇧</span><span class="lang-name">English</span></a>
+          <a href="../pt/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇧🇷</span><span class="lang-name">Português</span></a>
+          <a href="../ja/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇯🇵</span><span class="lang-name">日本語</span></a>
+          <a href="../es/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇪🇸</span><span class="lang-name">Español</span></a>
+          <a href="../id/" class="lang-option active"><span class="lang-flag" aria-hidden="true">🇮🇩</span><span class="lang-name">Indonesia</span></a>
+          <a href="../vi/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
         </div>
       </div>
       <a href="#contact" class="nav-cta">Hubungi kami</a>
@@ -169,7 +170,7 @@
 <main id="content" role="main">
 <section class="hero">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="../assets/videos/hace-view-boat-poster.jpg" preload="auto">
+    <video autoplay muted loop playsinline poster="../assets/videos/hace-view-boat-poster.jpg" preload="auto" aria-hidden="true" tabindex="-1">
       <source src="../assets/videos/hace-view-boat-hero.mp4" type="video/mp4">
       <img src="../assets/videos/hace-view-boat-poster.jpg" alt="Turbin HACE di laut">
     </video>
@@ -489,10 +490,10 @@
         <input type="hidden" name="_cc" value="&#109;&#97;&#120;&#64;karlandmax&#46;com">
         <input type="hidden" name="_next" value="https://hacewaveenergy.com/#contact">
         <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="text" name="name" placeholder="Nama lengkap" required>
-        <input type="email" name="email" placeholder="Email profesional" required>
-        <input type="text" name="company" placeholder="Perusahaan / Organisasi">
-        <textarea name="message" placeholder="Pesan Anda..." required></textarea>
+        <input type="text" name="name" aria-label="Nama lengkap" placeholder="Nama lengkap" required>
+        <input type="email" name="email" aria-label="Email profesional" placeholder="Email profesional" required>
+        <input type="text" name="company" aria-label="Perusahaan atau organisasi" placeholder="Perusahaan / Organisasi">
+        <textarea name="message" aria-label="Pesan Anda" placeholder="Pesan Anda..." required></textarea>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Kirim pesan</button>
         <p style="font-size:.72rem;color:#888;margin-top:8px;text-align:center">Pesan Anda akan dikirim langsung ke tim HACE.</p>
       </form>

@@ -127,6 +127,7 @@
 </script>
 </head>
 <body>
+<a href="#content" class="skip-link" style="position:absolute;top:-100%;left:50%;transform:translateX(-50%);background:#1D3D8F;color:#fff;padding:12px 24px;z-index:10000;font-size:.9rem;border-radius:0 0 6px 6px;text-decoration:none;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-100%'">Ir al contenido</a>
 
 <header role="banner">
 <nav id="nav">
@@ -145,13 +146,13 @@
                     <svg class="chevron" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
         </button>
         <div class="lang-dropdown">
-          <a href="../../avantages/" class="lang-option"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a>
-          <a href="../../en/why-hace/" class="lang-option"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></a>
-          <a href="../por-que-hace/" class="lang-option active"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></a>
-          <a href="../../pt/por-que-hace/" class="lang-option"><span class="lang-flag">🇵🇹</span><span class="lang-name">Português</span></a>
-          <a href="../../ja/why-hace/" class="lang-option"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
-          <a href="../../id/mengapa-hace/" class="lang-option"><span class="lang-flag">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></a>
-          <a href="../../vi/tai-sao-hace/" class="lang-option"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
+          <a href="../../avantages/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇫🇷</span><span class="lang-name">Français</span></a>
+          <a href="../../en/why-hace/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇬🇧</span><span class="lang-name">English</span></a>
+          <a href="../por-que-hace/" class="lang-option active"><span class="lang-flag" aria-hidden="true">🇪🇸</span><span class="lang-name">Español</span></a>
+          <a href="../../pt/por-que-hace/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇵🇹</span><span class="lang-name">Português</span></a>
+          <a href="../../ja/why-hace/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇯🇵</span><span class="lang-name">日本語</span></a>
+          <a href="../../id/mengapa-hace/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇮🇩</span><span class="lang-name">Bahasa Indonesia</span></a>
+          <a href="../../vi/tai-sao-hace/" class="lang-option"><span class="lang-flag" aria-hidden="true">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
         
         </div>
       </div>
@@ -190,7 +191,7 @@
 <main id="content" role="main">
 <section class="hero">
   <div class="hero-bg">
-    <video autoplay muted loop playsinline poster="../../assets/videos/hace-view-mer-poster.jpg" preload="auto">
+    <video autoplay muted loop playsinline poster="../../assets/videos/hace-view-mer-poster.jpg" preload="auto" aria-hidden="true" tabindex="-1">
       <source src="../../assets/videos/hace-timelapse-vague-hero.webm" type="video/webm">
       <source src="../../assets/videos/hace-view-mer-hero.mp4" type="video/mp4">
     </video>
