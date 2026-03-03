@@ -32,7 +32,7 @@ if(menuToggle&&navLinks){
 
 
 /* LAZY VIDEO — load only when clicked */
-function loadYT(el){if(el.classList.contains('playing'))return;el.classList.add('playing');const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/oTNm3LanwKE?autoplay=1&start=36&rel=0';iframe.title='Turbine HACE en fonctionnement';iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:0';el.appendChild(iframe)}
+function loadYT(el){if(el.classList.contains('playing'))return;el.classList.add('playing');const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/pvssRtQQIFY?autoplay=1&rel=0';iframe.title='Turbine HACE en fonctionnement';iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:0';el.appendChild(iframe)}
 
 
 /* REVEAL on scroll */
