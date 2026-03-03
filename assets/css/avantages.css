@@ -12,14 +12,12 @@
 .anim-delay-4{transition-delay:.4s}
 
 /* ── Argument sections ─────────────────────────────────────── */
-.arg-section{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden}
-.arg-section.img-right .arg-inner{grid-template-columns:1fr 1fr}
-.arg-section.img-left  .arg-inner{grid-template-columns:1fr 1fr}
-.arg-inner{display:grid;min-height:100vh}
+.arg-section{display:grid;align-items:center;position:relative;overflow:hidden}
+.arg-inner{display:grid;grid-template-columns:1fr 1fr}
 
-.arg-text{padding:100px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.arg-text{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
 .arg-img{position:relative;overflow:hidden}
-.arg-img img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.05);transition:transform 8s ease}
+.arg-img img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transform:scale(1.05);transition:transform 8s ease}
 .arg-img:hover img{transform:scale(1)}
 
 .arg-number{font-family:'Signika',sans-serif;font-size:8rem;font-weight:700;line-height:1;color:var(--cyan);opacity:.12;position:absolute;top:24px;left:48px;pointer-events:none;user-select:none}
