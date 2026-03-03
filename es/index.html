@@ -126,47 +126,6 @@
 
 <header role="banner">
 <nav id="nav">
-  <div class="container">
-    <a href="#" class="nav-logo">
-      <img src="../assets/images/logo-white.png" alt="HACE — Hydro Air Concept Energy" height="32">
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="#concept">Concepto</a>
-      <a href="#technologie">Tecnología</a>
-      <a href="#essais">Ensayos en el mar</a>
-      <a href="#presse">Prensa</a>
-      <a href="#applications">Aplicaciones</a>
-      <a href="#marche">Mercado</a>
-      <a href="#hydrogene">Hidrógeno</a>
-      <a href="#equipe">Equipo</a>
-            <div class="lang-selector" id="langSelector">
-        <button class="lang-btn" onclick="this.parentElement.classList.toggle('open')" aria-label="Cambiar idioma">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          ES
-          <svg class="chevron" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
-        </button>
-        <div class="lang-dropdown">
-          <a href="../" class="lang-option"><span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span></a>
-          <a href="../en/" class="lang-option"><span class="lang-flag">🇬🇧</span><span class="lang-name">English</span></a>
-          <a href="../pt/" class="lang-option"><span class="lang-flag">🇧🇷</span><span class="lang-name">Português</span></a>
-          <a href="../ja/" class="lang-option"><span class="lang-flag">🇯🇵</span><span class="lang-name">日本語</span></a>
-          <a href="../es/" class="lang-option active"><span class="lang-flag">🇪🇸</span><span class="lang-name">Español</span></a>
-          <a href="../id/" class="lang-option"><span class="lang-flag">🇮🇩</span><span class="lang-name">Indonesia</span></a>
-          <a href="../vi/" class="lang-option"><span class="lang-flag">🇻🇳</span><span class="lang-name">Tiếng Việt</span></a>
-        </div>
-      </div>
-      <a href="#contact" class="nav-cta">Contáctenos</a></div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-      <svg class="burger-waves" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="bw1" d="M1 3.5 Q5 0 9.5 3.5 Q14 7 18.5 3.5 Q21 1.5 29 3.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bw2" d="M1 11 Q5 7.5 9.5 11 Q14 14.5 18.5 11 Q21 9 29 11" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bw3" d="M1 18.5 Q5 15 9.5 18.5 Q14 22 18.5 18.5 Q21 16.5 29 18.5" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-</nav>
-
-<nav>
   <div class="container nav-inner">
     <a href="./" class="nav-logo">
       <img src="../assets/images/logo-white.png" alt="HACE — Hydro Air Concept Energy" height="32">
@@ -314,20 +273,18 @@
           </div>
         </div>
 
-        <a href="https://youtu.be/pvssRtQQIFY"
-           target="_blank" rel="noopener"
-           class="reveal"
-           style="display:block;border-radius:14px;overflow:hidden;position:relative;text-decoration:none">
+        <div onclick="loadYT(this)" class="reveal"
+           style="display:block;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:16/9">
           <img src="../assets/images/thumbnails/hace-video-ja.jpg"
                alt="Video — olas de 10 cm, turbina a plena velocidad"
                loading="lazy"
-               style="width:100%;display:block">
+               style="width:100%;height:100%;object-fit:cover;display:block">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
             <div style="width:60px;height:60px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#1D3D8F"><polygon points="6,3 20,12 6,21"/></svg>
             </div>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
