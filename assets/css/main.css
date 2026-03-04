@@ -254,8 +254,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 
 /* TESTIMONIALS */
 .testimonials{padding:100px 0}
-.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:50px}
-.test-card{padding:32px;border-radius:7px;background:var(--navy-light);border:1px solid #e8ecf0}
+.test-grid{display:flex;flex-wrap:wrap;gap:24px;margin-top:50px;justify-content:center}
+.test-card{padding:32px;border-radius:7px;background:var(--navy-light);border:1px solid #e8ecf0;flex:0 1 calc(50% - 12px)}
 .test-quote{font-size:.92rem;color:var(--text);font-style:italic;margin-bottom:20px;line-height:1.7}
 .test-author{font-size:.88rem;font-weight:600;color:var(--heading)}
 .test-role{font-size:.78rem;color:var(--text)}
@@ -275,9 +275,12 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:50px}
 .team-card{padding:24px;border-radius:10px;background:var(--navy-light);border:1px solid #e8ecf0;text-align:center;transition:all .3s}
 .team-card:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 20px rgba(83,186,143,.1)}
-.team-avatar{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;overflow:hidden}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;overflow:hidden}
+a.team-avatar{text-decoration:none}
 .team-avatar img{width:100%;height:100%;object-fit:cover}
 .team-name{font-size:1rem;font-weight:600;color:var(--heading);margin:0}
+.team-name a{color:inherit;text-decoration:none}
+.team-name a:hover{color:var(--cyan)}
 .team-role{font-size:.82rem;color:var(--text);margin:2px 0 0}
 .team-bg{font-size:.78rem;color:var(--cyan);margin:6px 0 0;font-weight:500}
 
@@ -371,7 +374,7 @@ footer a{color:var(--cyan)}
   .modular-configs{flex-direction:column}
   .modular-config-card{max-width:100%;min-width:auto;width:100%}
   .modular-config-arrow{transform:rotate(90deg)}
-  .secondary-grid,.test-grid,.h2-grid,.market-grid{grid-template-columns:1fr 1fr}
+  .secondary-grid,.h2-grid,.market-grid{grid-template-columns:1fr 1fr}
   .trials-grid{grid-template-columns:1fr 1fr}
   .team-grid{grid-template-columns:repeat(2,1fr)}
   /* TECHNOLOGIE PAGE — tablet */
@@ -413,7 +416,8 @@ footer a{color:var(--cyan)}
   .proof-main img{height:240px}
   .proof-aerial img{height:200px}
   .proof-video{aspect-ratio:16/9}
-  .why-pillar,.secondary-grid,.app-grid,.test-grid,.h2-grid,.trials-grid,.market-grid{grid-template-columns:1fr}
+  .why-pillar,.secondary-grid,.app-grid,.h2-grid,.trials-grid,.market-grid{grid-template-columns:1fr}
+  .test-card{flex:0 1 100%}
   .team-grid{grid-template-columns:1fr}
 
   /* HERO */
